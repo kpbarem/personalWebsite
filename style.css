@@ -119,7 +119,7 @@ html {
   transform: translateY(-50%);
   width: 0;
   word-break: break-all;
-  line-height: 4;
+  line-height: 3;
 }
 /* End of Section Heading */
 /* End of Common Styles */
@@ -442,11 +442,11 @@ html {
   margin: auto;
 }
 
-.about-me-text span {
+.about-me-text {
   font-family: "Poppins", sans-serif;
-  font-size: 15rem;
+  font-size: 12rem;
   font-weight: bold;
-  color: #aaa;
+  color: #fff;
   letter-spacing: 0.5rem;
   line-height: 0.9;
   text-shadow: 0 0 1rem #9b0e0e;
@@ -484,7 +484,7 @@ html {
 .section-3 {
   width: 100%;
   height: 100%;
-  padding: 10rem 0;
+  padding: 10rem 10rem;
   margin-top: 10rem;
   position: relative;
 }
@@ -872,8 +872,10 @@ My Experience
     height: 160%;
   }
 
-  .about-me-text span {
-    font-size: 11rem;
+  .about-me-text {
+    font-size: 50rem;
+    color: #fff;
+    visibility: visible;
   }
 
   .section-4 {
@@ -904,8 +906,9 @@ My Experience
     bottom: 0;
   }
 
-  .about-me-text span {
+  .about-me-text {
     font-size: 10rem;
+    color: #fff;
   }
 }
 
@@ -933,8 +936,9 @@ My Experience
     height: 45rem;
   }
 
-  .about-me-text span {
+  .about-me-text {
     font-size: 7.5rem;
+    color: #fff;
   }
 
   .project-img {
@@ -984,9 +988,9 @@ My Experience
     left: 5rem;
   }
 
-  .about-me-text span {
+  .about-me-text {
     font-size: 5.5rem;
-    color: #ccc;
+    color: #fff;
   }
 
   .service-btn {

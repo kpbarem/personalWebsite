@@ -135,7 +135,6 @@ mainBtns.forEach((btn) => {
   let ripple;
 
   btn.addEventListener("mouseenter", (e) => {
-    console.log("hi");
     const left = e.clientX - e.target.getBoundingClientRect().left;
     const top = e.clientY - e.target.getBoundingClientRect().top;
 
@@ -255,18 +254,16 @@ menuIcon.addEventListener("click", () => {
 
 // About Me Text
 const aboutMeText = document.querySelector(".about-me-text");
-const aboutMeTextContent =
-  "I am a designer & I create awards winning websites with the best user experience & I do not talk much, just contact me. :)";
 
-Array.from(aboutMeTextContent).forEach((char) => {
-  const span = document.createElement("span");
-  span.textContent = char;
-  aboutMeText.appendChild(span);
+// Array.from(aboutMeTextContent).forEach((char) => {
+//   const span = document.createElement("span");
+//   span.textContent = char;
+//   aboutMeText.appendChild(span);
 
-  span.addEventListener("mouseenter", (e) => {
-    e.target.style.animation = "aboutMeTextAnim 10s infinite";
-  });
-});
+//   span.addEventListener("mouseenter", (e) => {
+//     e.target.style.animation = "aboutMeTextAnim 10s infinite";
+//   });
+// });
 // End of About Me Text
 
 // Projects
@@ -353,24 +350,6 @@ const hideProjects = (project, i) => {
   }, i * 100);
 };
 
-// projectsBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
-
-//   showHideBool
-//     ? (projectsBtnText.textContent = "Show Less")
-//     : (projectsBtnText.textContent = "Show More");
-
-//   projects.forEach((project, i) => {
-//     i >= 6 &&
-//       (showHideBool ? showProjects(project, i) : hideProjects(project, i));
-//   });
-//   showHideBool = !showHideBool;
-// });
-// End of Projects Button
-// End of Projects
-
 // Section 4
 document.querySelectorAll(".service-btn").forEach((service) => {
   service.addEventListener("click", (e) => {
@@ -411,32 +390,6 @@ formInputs.forEach((input) => {
   });
 });
 // End of Form
-
-// Slideshow
-const slideshow = document.querySelector(".slideshow");
-
-setInterval(() => {
-  const firstIcon = slideshow.firstElementChild;
-
-  firstIcon.classList.add("faded-out");
-
-  const thirdIcon = slideshow.children[3];
-
-  thirdIcon.classList.add("light");
-
-  thirdIcon.previousElementSibling.classList.remove("light");
-
-  setTimeout(() => {
-    slideshow.removeChild(firstIcon);
-
-    slideshow.appendChild(firstIcon);
-
-    setTimeout(() => {
-      firstIcon.classList.remove("faded-out");
-    }, 500);
-  }, 500);
-}, 3000);
-// End of Slideshow
 
 // Form Validation
 const form = document.querySelector(".contact-form");
@@ -482,6 +435,7 @@ const checkEmail = (input) => {
   }
 };
 
+//temp comment to see if this helps anything
 form.addEventListener("submit", (e) => {
   checkLength(username, 2);
   checkLength(subject, 2);
@@ -489,10 +443,10 @@ form.addEventListener("submit", (e) => {
   checkEmail(email);
   checkRequiredFields([username, email, subject, message]);
 
-  const notValid = Array.from(messages).find((message) => {
+  const notValid = Array.from(messages).some((message) => {
     return message.classList.contains("error");
   });
-
+  console.log("hello" + notValid);
   notValid && e.preventDefault();
 });
 // End of Form Validation
